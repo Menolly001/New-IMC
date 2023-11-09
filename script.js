@@ -1,11 +1,11 @@
-// IMC = poids en kg / taille2 en m2
+// IMC = poids en kg / taille^2 en m^2
 function calculateBMI(height, weight) {
   const heightInMeters = height / 100;
   return weight / (heightInMeters * heightInMeters);
 }
 
 function getBMICategory(imc) {
-  // données pour le calcul
+  // Données pour le calcul
   if (imc < 18.5) {
     return { name: "Maigreur", color: "midnightblue" };
   } else if (imc < 25) {
@@ -20,46 +20,43 @@ function getBMICategory(imc) {
     return { name: "Obésité morbide", color: "darkred" };
   }
 }
-// selections
 
+// Sélections
 const calculateButton = document.getElementById("btn");
-
 const number = document.querySelector(".number");
-
 const text = document.querySelector(".text");
-
 const heightInput = document.getElementById("heightInput");
 const weightInput = document.getElementById("weightInput");
 
-// evenement de clic sur le bouton "calculer"
+// Événement de clic sur le bouton "calculer"
 calculateButton.addEventListener("click", function () {
-  // récupérer les valeurs de taille et de poids
+  // Récupérer les valeurs de taille et de poids
   const height = parseFloat(heightInput.value);
   const weight = parseFloat(weightInput.value);
 
-  // vérifier si les valeurs sont valides
+  // Vérifier si les valeurs sont valides
   if (isNaN(height) || isNaN(weight) || height <= 0 || weight <= 0) {
     number.textContent = "";
     text.textContent = "Veuillez entrer des valeurs valides.";
   } else {
-    // calcul de l'IMC
+    // Calcul de l'IMC
     const imc = calculateBMI(height, weight);
 
-    // afficher le résultat
+    // Afficher le résultat
     number.textContent = imc.toFixed(2);
 
-    // obtenir la bonne catégorie d'IMC
+    // Obtenir la bonne catégorie d'IMC
     const bmiCategory = getBMICategory(imc);
 
-    // mettre à jour la couleur du texte en fonction de la catégorie
+    // Mettre à jour la couleur du texte en fonction de la catégorie
     text.style.color = bmiCategory.color;
 
-    // afficher la catégorie d'IMC
-    text.textContent = `Catégorie IMC : ${bmiCategory.name}`;
+    // Afficher la catégorie d'IMC sans le texte "Catégorie IMC"
+    text.textContent = `${bmiCategory.name}`;
   }
 });
 
-// événement keydown dans les inputs
+// Événement keydown dans les champs de texte
 heightInput.addEventListener("keydown", function (event) {
   if (event.key === "Enter") {
     event.preventDefault();
