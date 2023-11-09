@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Nouveau exo IMC</title>
+  </head>
+  <body>
+    <div class="container d-flex text-center my-5 p-3 mb-5">
+      <div class="container-fluid">
+        <h1 class="title-imc">Calcule <span>d'IMC</span></h1>
+        <div class="row group-label my-5 text-center">
+          <div class="col text-center">
+            <label
+              class="form-label form-label1 row justify-content-center"
+              for="height"
+              >Taille en cm :</label
+            >
+            <input
+              type="text"
+              class="form-text form-text1 text-center"
+              id="heightInput"
+            />
+          </div>
+          <div class="col">
+            <label
+              class="form-label form-label2 row justify-content-center"
+              for="weight"
+              >Poids en kg :</label
+            >
+            <input
+              type="text"
+              class="form-text form-text2 text-center"
+              id="weightInput"
+            />
+          </div>
+        </div>
+        <div class="col">
+          <button type="button" class="btn fw-bold" id="btn">Calculer</button>
+          <p class="number my-2 fw-bold fs-2 text">0</p>
+        </div>
+      </div>
+    </div>
+    <script src="./script.js"></script>
+  </body>
+</html>

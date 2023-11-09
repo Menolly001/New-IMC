@@ -1,0 +1,43 @@
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 100%;
+  max-height: 100%;
+  width: 40%;
+  height: 400px;
+  background: linear-gradient(to right, #fad882, #fa4e09);
+  border-radius: 30px;
+  box-shadow: 10px 5px 5px black;
+}
+.btn {
+  /* a revoir */
+  font-size: 25px;
+  border: 1px;
+  border-radius: 5px;
+}
+.btn:hover {
+  /* a revoir*/
+  border: 3px;
+  border-radius: 5px;
+}
+h1 {
+  text-shadow: 2px 2px black;
+}
+.form-label {
+  font-size: 20px;
+}
+.form-text {
+  font-weight: bold;
+  font-size: 20px;
+  box-shadow: 2px 2px black;
+  border: none;
+  border-radius: 4px;
+  width: 200px;
+  height: 30px;
+}
